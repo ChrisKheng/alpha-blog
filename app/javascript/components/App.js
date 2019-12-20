@@ -16,7 +16,7 @@ class App extends React.Component {
         <h1>Homepage</h1>
         <p>Yep this is working!</p>
         <Person value = {this.state.value}></Person>
-        <button onClick={this.switchNameHandler}></button>
+        <button onClick={this.switchNameHandler}>Hit it</button>
       </React.Fragment>
     );
   }
