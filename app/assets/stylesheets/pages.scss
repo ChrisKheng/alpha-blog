@@ -1,3 +1,15 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.center {
+  text-align: center;
+}
+
+.Jumbotron-Home {
+  background-image: asset_url('Forest.jpeg');
+  background-size: cover;
+  height: 550px;
+}
+
+

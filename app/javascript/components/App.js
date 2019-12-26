@@ -1,30 +1,21 @@
 import React from "react"
-import PropTypes from "prop-types"
-import Person from "./Person"
-
+import {BrowserRouter, Route} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Jumbotron from "react-bootstrap/Jumbotron";
+import About from "./About.js"
+import Home from "./Home.js"
+
 import NavigationBar from "./global/NavigationBar";
 
 class App extends React.Component {
-  state = { value: 0 }
-
-  switchNameHandler = () => {
-      console.log('Was clicked!');
-      this.setState( { value: this.state.value + 1});
-  }
-
   render () {
     return (
-      <React.Fragment>
-        <NavigationBar/>
-        <Jumbotron>
-            <h1>Homepage</h1>
-            <p>Yep this is working!</p>
-        </Jumbotron>
-        <Person value = {this.state.value}></Person>
-        <button onClick={this.switchNameHandler}>Hit it</button>
-      </React.Fragment>
+      <BrowserRouter>
+          <React.Fragment>
+              <NavigationBar/>
+              <Route exact path="/" render = {() => <Home/>}/>
+              <Route exact path="/about" render = {() => <About/>}/>
+          </React.Fragment>
+      </BrowserRouter>
     );
   }
 }
